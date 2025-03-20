@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<site>
+<localinfo sitename="Grafica" localroot="C:%5CDocuments%20and%20Settings%5CEva%20C.%20Magnus%5CMy%20Documents%5CGrafica%5CWeb%20site%5C" imagefolder="" spacerfilepath="" refreshlocal="TRUE" cache="TRUE" httpaddress="http://" curserver="webserver"/>
+<remoteinfo accesstype="ftp" host="mygrafica.com" remoteroot="" user="mygrafica" pw="466D717A69773E" checkoutname="" emailaddress="" enablecheckin="FALSE" checkoutwhenopen="TRUE" usefirewall="FALSE" usepasv="TRUE" useSSH="FALSE"/>
+<designnotes usedesignnotes="TRUE" sharedesignnotes="TRUE"/>
+<sitemap homepage="C:%5CDocuments%20and%20Settings%5CEva%20C.%20Magnus%5CMy%20Documents%5CGrafica%5CWeb%20site%5Cindex.htm" pagesperrow="200" columnwidth="125" showdependentfiles="FALSE" showpagetitles="FALSE" showhiddenfiles="FALSE"/>
+<fileviewcolumns sharecolumns="TRUE">
+    <column name="Local Files" align="left" show="TRUE" share="FALSE" builtin="TRUE" localwidth="128" remotewidth="180" />
+    <column name="Notes" align="center" show="TRUE" share="FALSE" builtin="TRUE" localwidth="36" remotewidth="36" />
+    <column name="Size" align="right" show="TRUE" share="FALSE" builtin="TRUE" localwidth="40" remotewidth="-2" />
+    <column name="Type" align="left" show="TRUE" share="FALSE" builtin="TRUE" localwidth="60" remotewidth="60" />
+    <column name="Modified" align="left" show="TRUE" share="FALSE" builtin="TRUE" localwidth="102" remotewidth="102" />
+    <column name="Checked Out By" align="left" show="TRUE" share="FALSE" builtin="TRUE" localwidth="-1" remotewidth="-1" />
+</fileviewcolumns>
+<appserverinfo servermodel="" urlprefix="http://localhost/" connectionsmigrated="TRUE" serverobjectsversion="1" defaultdoctype="HTML" accesstype="none" testsvrbinaccesstype="none"/>
+<cloaking enabled="TRUE" patterns="FALSE">
+    <cloakedpattern pattern=".png"/>
+    <cloakedpattern pattern=".fla"/>
+</cloaking>
+</site>

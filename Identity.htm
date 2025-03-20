@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 transitional//EN"
+"http://www.w3.org/tr/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Grafica::Identity</title>
+<script language="JavaScript">
+function correctPNG() // correctly handle PNG transparency in Win IE 5.5 & 6.
+{
+   var arVersion = navigator.appVersion.split("MSIE")
+   var version = parseFloat(arVersion[1])
+   if ((version >= 5.5) && (document.body.filters)) 
+   {
+      for(var i=0; i<document.images.length; i++)
+      {
+         var img = document.images[i]
+         var imgName = img.src.toUpperCase()
+         if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+         {
+            var imgID = (img.id) ? "id='" + img.id + "' " : ""
+            var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+            var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+            var imgStyle = "display:inline-block;" + img.style.cssText 
+            if (img.align == "left") imgStyle = "float:left;" + imgStyle
+            if (img.align == "right") imgStyle = "float:right;" + imgStyle
+            if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+            var strNewHTML = "<span " + imgID + imgClass + imgTitle
+            + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+            + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+            + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" 
+            img.outerHTML = strNewHTML
+            i = i-1
+         }
+      }
+   }    
+}
+window.attachEvent("onload", correctPNG);
+</script><style type="text/css">
+<!--
+body,td,th {
+	font-family: garamond, franklin gothic book, sans-serif;
+	font-size: 16px;
+	color: #000000;
+}
+body {
+	background-image:  url(images/BBC-poster-back-small.jpg);
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #3399ff;
+}
+a:active {
+	text-decoration: none;
+}
+h1 {
+	font-size: 60px;
+}
+.style1 {
+	font-family: garamond, verdana, sans-serif;
+	font-weight: bold;
+}
+.style2 {
+	font-family: garamond, verdana, sans-serif;
+	font-size: 72px;
+	font-weight: bold;
+	color: #e70073;
+}
+.style4 {font-family: garamond, verdana, sans-serif; font-weight: bold; font-size: 16; }
+.style6 {font-size: 16}
+-->
+</style>
+<script language="javascript" type="text/javascript">
+<!--
+function mm_preloadimages() { //v3.0
+  var d=document; if(d.images){ if(!d.mm_p) d.mm_p=new array();
+    var i,j=d.mm_p.length,a=mm_preloadimages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexof("#")!=0){ d.mm_p[j]=new image; d.mm_p[j++].src=a[i];}}
+}
+
+function mm_swapimgrestore() { //v3.0
+  var i,x,a=document.mm_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.osrc;i++) x.src=x.osrc;
+}
+
+function mm_findobj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexof("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=mm_findobj(n,d.layers[i].document);
+  if(!x && d.getelementbyid) x=d.getelementbyid(n); return x;
+}
+
+function mm_swapimage() { //v3.0
+  var i,j=0,x,a=mm_swapimage.arguments; document.mm_sr=new array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=mm_findobj(a[i]))!=null){document.mm_sr[j++]=x; if(!x.osrc) x.osrc=x.src; x.src=a[i+2];}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+</head>
+
+<body onLoad="mm_preloadimages('HOMEbuttonOn.gif','LAYOUTbuttonOn.gif','MULTIbuttonOn.gif','ILLUSbuttonoOn.gif','IDbuttonOn.gif');MM_preloadImages('/images/HOMEbuttonOn.png')">
+<table width="986" height="1040" border="0" cellpadding="0" cellspacing="0">
+  <!--dwlayouttable-->
+  <tr> 
+    <td width="205" height="31">&nbsp;</td>
+    <td width="776" rowspan="10" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <!--dwlayouttable-->
+        <tr> 
+          <td width="770" height="1040" valign="top"> <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <!--dwlayouttable-->
+              <tr> 
+                <td width="5" height="21">&nbsp;</td>
+                <td width="5">&nbsp;</td>
+                <td width="13">&nbsp;</td>
+                <td width="292">&nbsp;</td>
+                <td width="435">&nbsp;</td>
+                <td width="20"></td>
+              </tr>
+              <tr> 
+                <td height="85">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td colspan="3" valign="top"><div align="center"><span class="style2">Identity</span></div></td>
+                <td></td>
+              </tr>
+              <tr> 
+                <td height="34">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td></td>
+              </tr>
+              <tr> 
+                <td height="184"></td>
+                <td></td>
+                <td></td>
+                <td valign="top" bgcolor="#999999"><div align="center"><img src="images/WW-bus-card.gif" alt="Water Works business card" width="252" height="144" hspace="20" vspace="20"></div></td>
+                <td colspan="2" rowspan="3" valign="top" bgcolor="#999999"><div align="center"><img src="images/WWInvSm.png" alt="Water Works invoice" width="415" height="545" hspace="20" vspace="20" border="0"></div></td>
+              </tr>
+              <tr> 
+                <td height="256"></td>
+                <td></td>
+                <td></td>
+                <td valign="top" bgcolor="#999999"><div align="center"><img src="images/truck%20frontSm.png" alt="Water Works truck front" width="208" height="216" hspace="20" vspace="20" border="0"></a></div></td>
+              </tr>
+              <tr> 
+                <td height="145"></td>
+                <td></td>
+                <td>&nbsp;</td>
+                <td rowspan="2" valign="top" bgcolor="#999999"><div align="center"><a href="TruckBack.htm"><img src="images/truck-backSm.png" width="208" height="214" hspace="20" vspace="20" border="0" align="top"></a></div></td>
+              </tr>
+              <tr> 
+                <td height="214">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td colspan="2" valign="top" bgcolor="#999999"><div align="center"><a href="TruckSide.htm"><img src="images/truck-sideSm.png" alt="Water Works truck side" width="417" height="196" border="0" align="top"></a></div></td>
+              </tr>
+              <tr> 
+                <td height="101"></td>
+                <td colspan="4" valign="top"><p align="center">&nbsp;</p>
+                  <p align="center" class="style4"><a href="index.htm">Home</a> 
+                    | <a href="Layout.htm">Production</a> | <a href="Identity.htm">Identity</a> 
+                    | <a href="MultiplePageDocuments.htm">Multiple-page 
+                    Documents</a> | <a href="Illustration.htm">Illustration</a> 
+                    | <a href="/Payments.htm">Payments</a></p>
+                  <p align="center" class="style1"><span class="style6"><a href="mailto:info@mygrafica.com">email 
+                    us</a></span> </p></td>
+                <td></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+    <td width="5"></td>
+  </tr>
+  <tr> 
+    <td height="142" valign="top"><div align="center"><img src="images/GraficaLogo.gif" alt="Grafica logo" width="120" height="129"></div></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td height="91" valign="top"> <div align="center"><a href="/index.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Grafica Home Button','','/images/HOMEbuttonOn.png',1)"><img src="/images/HOMEbutton.png" alt="Grafica Home" name="Grafica Home Button" width="139" height="77" border="0"></a></div></td>
+  </tr>
+  <tr> 
+    <td height="91" valign="top"> <div align="center"><a href="/Websites.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Web Sites Button','','/images/WEBSITEbuttonOn.png',1)"><img src="/images/WEBSITEbutton.png" alt="Web Sites" name="Web Sites Button" width="136" height="77" border="0"></a></div></td>
+  </tr>
+  <tr> 
+    <td height="91" valign="top"> <div align="center"><a href="/Layout.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Layout Button','','/images/LAYOUTbuttonOn.png',1)"><img src="/images/LAYOUTbutton.png" alt="Layouts" name="Layout Button" width="136" height="77" border="0"></a></div></td>
+  </tr>
+  <tr> 
+    <td height="91" valign="top"> <div align="center"><a href="/Identity.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Identity Button','','/images/IDbuttonON.png',1)"><img src="/images/IDbutton.png" alt="Corporate Identity" name="Identity Button" width="136" height="77" border="0"></a></div></td>
+  </tr>
+  <tr> 
+    <td height="91" valign="top"> <div align="center"><a href="/MultiplePageDocuments.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Multiple Page Docs Button','','/images/MULTIbuttonOn.png',1)"><img src="/images/MULTIbutton.png" alt="Multiple Page Documents" name="Multiple Page Docs Button" width="136" height="77" border="0"></a></div></td>
+  </tr>
+  <tr> 
+    <td height="77" valign="top"> 
+      <div align="center"><a href="/Illustration.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Illustration Button','','/images/ILLUSbuttonOn.png',1)"><img src="/images/ILLUSbutton.png" alt="Illustration" name="Illustration Button" width="136" height="77" border="0"></a></div></td>
+  </tr>
+  <tr>
+    <td height="335" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+  </tr>
+</table>
+
+</html>

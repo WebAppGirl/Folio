@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+  <title>Make A Payment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+<body>
+
+
+
+<!-- Start of Form -->
+<!-- Note: target="paypal" was replaced with the variable target="_self" -->
+<!-- Note: shopping_url also added to code -->
+<!-- These two changes allow better functionality with IE and Firefox -->
+<form action="https://www.paypal.com/cgi-bin/webscr" target="_self" method="post">
+<input type="hidden" name="cmd" value="_cart">
+<input type="hidden" name="add" value="1">
+<input type="hidden" name="business" value="info@mygrafica.com">
+<input type="hidden" name="no_note" value="1">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="item_name" value="Payment">
+<input type="hidden" name="no_shipping" value="2">
+
+Enter Amount:  
+<input type="text" name="amount" value="" size="4">
+
+<input type="hidden" name="return" value="http://www.mygrafica.com/thankyou.html">
+<input type="hidden" name="cancel_return" value="http://www.mygrafica.com/cancel.html">
+<input type="hidden" name="shopping_url" value="http://www.mygrafica.com/your_page.html">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="bn" value="PP-ShopCartBF">
+<br><br>
+<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<!-- End of Form -->
+
+</body>
+</html>
